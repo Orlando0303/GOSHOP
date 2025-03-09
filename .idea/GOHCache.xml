@@ -1,6 +1,399 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="GoORMHelperCache">
+    <option name="schemaMapping">
+      <map>
+        <entry key="Banner">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/shop_srv/model/goods.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="BaseModel">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/shop_srv/goods_srv/model/base.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Brands">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/shop_srv/model/goods.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Category">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/shop_srv/model/goods.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="ConsulConfig">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/shop_srv/goods_srv/config/config.go" />
+              <option value="file://$PROJECT_DIR$/shop_srv/user_srv/config/config.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="EsConfig">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/shop_srv/goods_srv/config/config.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="EsGoods">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/shop_srv/goods_srv/model/es_goods.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Goods">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/shop_srv/model/goods.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GoodsCategoryBrand">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/shop_srv/model/goods.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GoodsServer">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/shop_srv/goods_srv/handler/goods.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="MysqlConfig">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/shop_srv/goods_srv/config/config.go" />
+              <option value="file://$PROJECT_DIR$/shop_srv/user_srv/config/config.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="NacosConfig">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/shop_srv/goods_srv/config/config.go" />
+              <option value="file://$PROJECT_DIR$/shop_srv/user_srv/config/config.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Result">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/shop_srv/goods_srv/handler/goods.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="ServerConfig">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/shop_srv/goods_srv/config/config.go" />
+              <option value="file://$PROJECT_DIR$/shop_srv/user_srv/config/config.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UserServer">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/shop_srv/user_srv/handler/user.go" />
+            </set>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="scannedPathMapping">
+      <map>
+        <entry key="file://$PROJECT_DIR$/shop_srv/goods_srv/config/config.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741501961397" />
+              <option name="schema">
+                <list>
+                  <option value="MysqlConfig" />
+                  <option value="ConsulConfig" />
+                  <option value="EsConfig" />
+                  <option value="ServerConfig" />
+                  <option value="NacosConfig" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/shop_srv/goods_srv/global/global.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741502195824" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/shop_srv/goods_srv/handler/banner.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741502195813" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/shop_srv/goods_srv/handler/base.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741501961491" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/shop_srv/goods_srv/handler/brands.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741502195783" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/shop_srv/goods_srv/handler/category.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741502195772" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/shop_srv/goods_srv/handler/category_brand.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741502195778" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/shop_srv/goods_srv/handler/goods.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741502195795" />
+              <option name="schema">
+                <list>
+                  <option value="GoodsServer" />
+                  <option value="Result" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/shop_srv/goods_srv/initialize/config.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741502195817" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/shop_srv/goods_srv/initialize/db.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741502195807" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/shop_srv/goods_srv/initialize/es.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741502195801" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/shop_srv/goods_srv/main.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741502195789" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/shop_srv/goods_srv/model/base.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741501960540" />
+              <option name="schema">
+                <list>
+                  <option value="BaseModel" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/shop_srv/goods_srv/model/es_goods.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741501960699" />
+              <option name="schema">
+                <list>
+                  <option value="EsGoods" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/shop_srv/goods_srv/model/main/main.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741502195766" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/shop_srv/goods_srv/tests/brands.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741501961158" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/shop_srv/goods_srv/tests/category/category.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741501961063" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/shop_srv/goods_srv/tests/category_brand/main.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741501961256" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/shop_srv/goods_srv/tests/goods/main.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741501960902" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/shop_srv/goods_srv/utils/addr.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741501961323" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/shop_srv/model/goods.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741405567890" />
+              <option name="schema">
+                <list>
+                  <option value="Category" />
+                  <option value="Brands" />
+                  <option value="GoodsCategoryBrand" />
+                  <option value="Banner" />
+                  <option value="Goods" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/shop_srv/model/main/main.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741405567736" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/shop_srv/user_srv/config/config.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741501333021" />
+              <option name="schema">
+                <list>
+                  <option value="MysqlConfig" />
+                  <option value="ConsulConfig" />
+                  <option value="ServerConfig" />
+                  <option value="NacosConfig" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/shop_srv/user_srv/global/global.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741502168850" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/shop_srv/user_srv/handler/user.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741502168838" />
+              <option name="schema">
+                <list>
+                  <option value="UserServer" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/shop_srv/user_srv/initialize/config.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741502168843" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/shop_srv/user_srv/initialize/db.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741502168854" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/shop_srv/user_srv/main.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741502168830" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/shop_srv/user_srv/model/main/main.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741502168825" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/shop_srv/user_srv/tests/user.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741502168820" />
+            </ScannedPath>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="tableStructMapping">
+      <map>
+        <entry key="banner" value="Banner" />
+        <entry key="base_model" value="BaseModel" />
+        <entry key="brands" value="Brands" />
+        <entry key="category" value="Category" />
+        <entry key="consul_config" value="ConsulConfig" />
+        <entry key="es_config" value="EsConfig" />
+        <entry key="es_goods" value="EsGoods" />
+        <entry key="goods" value="Goods" />
+        <entry key="goods_category_brand" value="GoodsCategoryBrand" />
+        <entry key="goods_server" value="GoodsServer" />
+        <entry key="mysql_config" value="MysqlConfig" />
+        <entry key="nacos_config" value="NacosConfig" />
+        <entry key="result" value="Result" />
+        <entry key="server_config" value="ServerConfig" />
+        <entry key="user_server" value="UserServer" />
+      </map>
+    </option>
     <option name="lastTimeChecked" value="1741319916661" />
   </component>
 </project>

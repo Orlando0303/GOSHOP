@@ -3,13 +3,13 @@ package initialize
 import (
 	"encoding/json"
 	"fmt"
+	"shop_srv/goods_srv/global"
+
 	"github.com/nacos-group/nacos-sdk-go/clients"
 	"github.com/nacos-group/nacos-sdk-go/common/constant"
 	"github.com/nacos-group/nacos-sdk-go/vo"
-	"go.uber.org/zap"
-
 	"github.com/spf13/viper"
-	"shop_srv/user_srv/global"
+	"go.uber.org/zap"
 )
 
 func GetEnvInfo(env string) bool {
@@ -22,9 +22,9 @@ func InitConfig() {
 	//从配置文件中读取出对应的配置
 	debug := GetEnvInfo("SHOP_DEBUG")
 	configFilePrefix := "config"
-	configFileName := fmt.Sprintf("user_srv/%s-pro.yaml", configFilePrefix)
+	configFileName := fmt.Sprintf("goods_srv/%s-pro.yaml", configFilePrefix)
 	if debug {
-		configFileName = fmt.Sprintf("user_srv/%s-debug.yaml", configFilePrefix)
+		configFileName = fmt.Sprintf("goods_srv/%s-debug.yaml", configFilePrefix)
 	}
 
 	v := viper.New()
@@ -53,9 +53,7 @@ func InitConfig() {
 		NotLoadCacheAtStart: true,
 		LogDir:              "tmp/nacos/log",
 		CacheDir:            "tmp/nacos/cache",
-		//RotateTime:          "1h",
-		//MaxAge:              3,
-		LogLevel: "debug",
+		LogLevel:            "debug",
 	}
 
 	configClient, err := clients.CreateConfigClient(map[string]interface{}{

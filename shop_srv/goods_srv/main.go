@@ -3,21 +3,23 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/hashicorp/consul/api"
 	"github.com/nacos-group/nacos-sdk-go/inner/uuid"
+	"net"
+	"os"
+	"os/signal"
+	"shop_srv/goods_srv/global"
+	"shop_srv/goods_srv/handler"
+	"shop_srv/goods_srv/initialize"
+	"shop_srv/goods_srv/proto"
+	"shop_srv/goods_srv/utils"
+	"syscall"
+
 	"go.uber.org/zap"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/health"
 	"google.golang.org/grpc/health/grpc_health_v1"
-	"net"
-	"os"
-	"os/signal"
-	"shop_srv/user_srv/global"
-	"shop_srv/user_srv/handler"
-	"shop_srv/user_srv/initialize"
-	"shop_srv/user_srv/proto"
-	"shop_srv/user_srv/utils"
-	"syscall"
+
+	"github.com/hashicorp/consul/api"
 )
 
 func main() {
@@ -28,6 +30,7 @@ func main() {
 	initialize.InitLogger()
 	initialize.InitConfig()
 	initialize.InitDB()
+	initialize.InitEs()
 	zap.S().Info(global.ServerConfig)
 
 	flag.Parse()
@@ -39,19 +42,17 @@ func main() {
 	zap.S().Info("port: ", *Port)
 
 	server := grpc.NewServer()
-	proto.RegisterUserServer(server, &handler.UserServer{})
-
+	proto.RegisterGoodsServer(server, &handler.GoodsServer{})
 	lis, err := net.Listen("tcp", fmt.Sprintf("%s:%d", *IP, *Port))
 	if err != nil {
 		panic("failed to listen:" + err.Error())
 	}
-
+	//注册服务健康检查
 	grpc_health_v1.RegisterHealthServer(server, health.NewServer())
 
 	//服务注册
 	cfg := api.DefaultConfig()
-	cfg.Address = fmt.Sprintf("%s:%d",
-		global.ServerConfig.ConsulInfo.Host,
+	cfg.Address = fmt.Sprintf("%s:%d", global.ServerConfig.ConsulInfo.Host,
 		global.ServerConfig.ConsulInfo.Port)
 
 	client, err := api.NewClient(cfg)
@@ -61,16 +62,14 @@ func main() {
 	//生成对应的检查对象
 	check := &api.AgentServiceCheck{
 		GRPC:                           fmt.Sprintf("%s:%d", global.ServerConfig.Host, *Port),
-		Timeout:                        "10s",
-		Interval:                       "10s",
+		Timeout:                        "5s",
+		Interval:                       "5s",
 		DeregisterCriticalServiceAfter: "15s",
-		//GRPCUseTLS:                     false,
 	}
 
 	//生成注册对象
 	registration := new(api.AgentServiceRegistration)
 	registration.Name = global.ServerConfig.Name
-	//使consul里面的serviceID唯一，但name可以重复
 	serviceID, err := uuid.NewV4()
 	if err != nil {
 		panic(err)
@@ -80,15 +79,11 @@ func main() {
 	registration.Tags = global.ServerConfig.Tags
 	registration.Address = global.ServerConfig.Host
 	registration.Check = check
-
+	//1. 如何启动两个服务
+	//2. 即使我能够通过终端启动两个服务，但是注册到consul中的时候也会被覆盖
 	err = client.Agent().ServiceRegister(registration)
 	if err != nil {
 		panic(err)
-	}
-
-	err = server.Serve(lis)
-	if err != nil {
-		panic("failed to start grpc:" + err.Error())
 	}
 
 	go func() {

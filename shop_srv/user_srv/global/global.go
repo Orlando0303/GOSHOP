@@ -2,7 +2,7 @@ package global
 
 import (
 	"gorm.io/gorm"
-	"shop/user_srv/config"
+	"shop_srv/user_srv/config"
 )
 
 var (

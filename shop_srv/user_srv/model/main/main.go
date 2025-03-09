@@ -12,7 +12,7 @@ import (
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
 	"gorm.io/gorm/schema"
-	"shop/user_srv/model"
+	"shop_srv/user_srv/model"
 )
 
 /*func genMd5(code string) string {

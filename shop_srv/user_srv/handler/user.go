@@ -9,9 +9,9 @@ import (
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 	"gorm.io/gorm"
-	"shop/user_srv/global"
-	"shop/user_srv/model"
-	"shop/user_srv/proto"
+	"shop_srv/user_srv/global"
+	"shop_srv/user_srv/model"
+	"shop_srv/user_srv/proto"
 	"strings"
 	"time"
 )
